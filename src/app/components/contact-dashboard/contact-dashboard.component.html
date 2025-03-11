@@ -1,0 +1,8 @@
+<div class="container contact-list">
+    <div>
+        <h2 class="header">{{COMMON_CONSTANTS.CONTACT_LIST}}<span class="add-button" routerLink="/add"><strong>{{COMMON_CONSTANTS.ADD_BTN_SYMBOL}}</strong></span></h2>
+    </div>
+    <app-search (searchValue)="this.searchText.set($event)" (sortByValue)="sortBy = $event"></app-search>
+    <app-contact-list [contacts]="this.contacts" [searchText]="searchText()" [sortBy]="sortBy"
+        (deleteContact)="deleteContact($event)"></app-contact-list>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>{{ isEditMode() ? COMMON_CONSTANTS.EDIT_CONTACT : COMMON_CONSTANTS.ADD_CONTACT }}</h2>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="saveContact()">
+        <div class="mb-2">
+            <label>{{COMMON_CONSTANTS.NAME_LABEL}}:</label>
+            <input [(ngModel)]="contact().name" formControlName="name" name="name" type="text" required class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label>{{COMMON_CONSTANTS.EMAIL_LABEL}}:</label>
+            <input [(ngModel)]="contact().email" formControlName="email" name="email" type="email" required class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label>{{COMMON_CONSTANTS.PHONE_LABEL}}:</label>
+            <input [(ngModel)]="contact().phone" formControlName="phone" name="phone" type="tel" maxlength="10" required class="form-control" />
+        </div>
+        <div class="btn">
+            <button class="btn btn-success btn-primary" [disabled]="!this.contactForm.valid" type="submit">{{ isEditMode() ? COMMON_CONSTANTS.UPDATE_BTN_LABEL : COMMON_CONSTANTS.ADD_BTN_LABEL }}</button>
+            <button class="btn btn-secondary ms-2 btn-cancel" (click)="cancel()">{{COMMON_CONSTANTS.CANCEL_BTN_LABEL}}</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+.search-bar {
+    width: 50%;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.sorting-container {
+    margin-bottom: 10px;
+
+    select {
+        background-color: #fff;
+        border-radius: 10px;
+
+        &:focus {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+        }
+    }
+}

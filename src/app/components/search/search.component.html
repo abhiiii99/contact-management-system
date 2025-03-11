@@ -1,0 +1,8 @@
+<div class="sorting-container">
+    <label for="sort-by">{{COMMON_CONSTANTS.SORT_BY_LABEL}}: </label>
+    <select id="sort-by" [(ngModel)]="sortBy" (change)="sortContacts()">
+        <option value="name">{{COMMON_CONSTANTS.NAME_LABEL}}</option>
+        <option value="phone">{{COMMON_CONSTANTS.PHONE_LABEL}}</option>
+    </select>
+</div>
+<input [formControl]="searchText" placeholder="Search by name or phone" class="form-control mb-2 search-bar" />

@@ -1,0 +1,38 @@
+<!-- <div class="container contact-list">
+    <div>
+        <h2 class="header">Contact List<span class="add-button" routerLink="/add"><strong>+</strong></span></h2>
+    </div>
+    <div class="sorting-container">
+        <label for="sort-by">Sort By: </label>
+        <select id="sort-by" [(ngModel)]="sortBy" (change)="sortContacts()">
+            <option value="name">Name</option>
+            <option value="phone">Phone Number</option>
+        </select>
+    </div> -->
+    <!-- <input [(ngModel)]="searchText" placeholder="Search by name or phone" class="form-control mb-2 search-bar" /> -->
+     <!-- <app-search (searchValue)="this.searchText.set($event)"></app-search>
+
+    <div *ngFor="let contact of filteredContacts()">
+        <div class="card p-3 mb-2 contact-card">
+            <h5>{{ contact.name }}</h5>
+            <p><strong>Email:</strong> {{ contact.email }}</p>
+            <p><strong>Phone:</strong> {{ contact.phone }}</p>
+            <div class="btn-group">
+                <button class="btn btn-primary add-button" [routerLink]="['/edit', contact.id]">Edit</button>
+                <button class="btn btn-danger ms-2 add-button" (click)="deleteContact(contact.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div *ngFor="let contact of filteredContacts">
+    <div class="card p-3 mb-2 contact-card">
+        <h5>{{ contact.name }}</h5>
+        <p><strong>{{COMMON_CONSTANTS.EMAIL_LABEL}}:</strong> {{ contact.email }}</p>
+        <p><strong>{{COMMON_CONSTANTS.PHONE_LABEL}}:</strong> {{ contact.phone }}</p>
+        <div class="btn-group">
+            <button class="btn btn-primary add-button" [routerLink]="['/edit', contact.id]">{{COMMON_CONSTANTS.EDIT_BTN_LABEL}}</button>
+            <button class="btn btn-danger ms-2 add-button" (click)="deleteContactById(contact.id)">{{COMMON_CONSTANTS.DELETE_BTN_LABEL}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+.contact-form {
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    input {
+        width: 95%;
+        padding: 8px;
+        border: 2px solid var(--primary-color);
+        border-radius: 6px;
+        margin-bottom: 15px;
+
+        &:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+        }
+    }
+
+    .btn {
+        flex: 1;
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+
+            &:disabled {
+                cursor: default;
+                opacity: 0.5;
+            }
+        }
+
+        &.btn-cancel {
+            background-color: #757575;
+            color: #fff;
+        }
+    }
+}
