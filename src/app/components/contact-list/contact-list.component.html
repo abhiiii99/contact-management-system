@@ -33,6 +33,7 @@
         <div class="btn-group">
             <button class="btn btn-primary add-button" [routerLink]="['/edit', contact.id]">{{COMMON_CONSTANTS.EDIT_BTN_LABEL}}</button>
             <button class="btn btn-danger ms-2 add-button" (click)="deleteContactById(contact.id)">{{COMMON_CONSTANTS.DELETE_BTN_LABEL}}</button>
+            <button class="btn btn-pay ms-2 add-button" routerLink="/payment">{{COMMON_CONSTANTS.PAY_BTN_LABEL}}</button>
         </div>
     </div>
 </div>

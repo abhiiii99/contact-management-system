@@ -10,6 +10,7 @@ export class CommonConstants {
     public static readonly EDIT_BTN_LABEL = 'Edit';
     public static readonly UPDATE_BTN_LABEL = 'Update';
     public static readonly DELETE_BTN_LABEL = 'Delete';
+    public static readonly PAY_BTN_LABEL = 'Pay';
     public static readonly CANCEL_BTN_LABEL = 'Cancel';
     public static readonly ADD_BTN_SYMBOL = '+';
     public static readonly ADD_BTN_LABEL = 'Add';

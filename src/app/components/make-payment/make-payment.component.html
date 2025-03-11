@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="payment-amount">
+        <h2>Final Amount:</h2>
+        <div>
+            <span><strong>$250.00&nbsp;</strong></span>
+            <span class="amount-details" (click)="showDetails = !showDetails">+</span>
+        </div>
+    </div>
+    <div *ngIf="showDetails">
+        <div class="payment-amount">
+            <h5>Item Cost: </h5>
+            <p>$200.00</p>
+        </div>
+        <div class="payment-amount">
+            <h5>CGST: </h5>
+            <p>$25.00</p>
+        </div>
+        <div class="payment-amount">
+            <h5>IGST: </h5>
+            <p>$25.00</p>
+        </div>
+    </div>
+    <div class="payment-method">
+        <h3>Select Payment Method</h3>
+        <div class="btn-group">
+        <button [ngClass]="{'selected-method': paymentMethod === 'Credit Card'}" (click)="selectPayment('Credit Card')">Credit Card</button>
+        <button [ngClass]="{'selected-method': paymentMethod === 'UPI'}" (click)="selectPayment('UPI')">UPI</button>
+        <button [ngClass]="{'selected-method': paymentMethod === 'Net Banking'}" (click)="selectPayment('Net Banking')">Net Banking</button>
+        <button [ngClass]="{'selected-method': paymentMethod === 'Wallet'}" (click)="selectPayment('Wallet')">Wallet</button>
+        </div>
+    </div>
+    
+    <div *ngIf="showPaymentDetails">
+        <h2>Enter Payment Details - {{ paymentMethod }}</h2>
+        <div *ngIf="paymentMethod === 'Credit Card'">
+            <form [formGroup]="cardForm" class="payment-details">
+                <input placeholder="Card Number" type="tel" formControlName="cardNumber" class="input-fields" />
+                <input placeholder="Expiry Date (MM/YY)" type="text" formControlName="expiry" class="input-fields" />
+                <input placeholder="CVV" type="tel" formControlName="cvv" class="input-fields" />
+            </form>
+        </div>
+    
+        <div *ngIf="paymentMethod === 'UPI'">
+            <input [formControl]="upiId" placeholder="UPI ID" class="input-fields" />
+        </div>
+    
+        <div *ngIf="paymentMethod === 'Net Banking'">
+            <select [formControl]="netBanking" class="input-fields">
+                <option value="">Select Bank</option>
+                <option value="hdfc">HDFC</option>
+                <option value="icici">ICICI</option>
+                <option value="sbi">SBI</option>
+            </select>
+        </div>
+    
+        <div *ngIf="paymentMethod === 'Wallet'">
+            <select [formControl]="wallet" class="input-fields">
+                <option value="">Select Wallet</option>
+                <option value="paytm">Paytm</option>
+                <option value="phonepe">PhonePe</option>
+                <option value="amazonpay">Amazon Pay</option>
+                <option value="gpay">GPay</option>
+            </select>
+        </div>
+    
+        <button class="btn-success" [disabled]="isButtonDisabled()" (click)="confirmPayment()">Confirm & Pay</button>
+    </div>
+    <div>
+        <h4 style="color: var(--primary-color)" *ngIf="showSuccessMsg">Your payment was successful!</h4>
+    </div>
+</div>

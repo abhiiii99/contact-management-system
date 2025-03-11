@@ -20,13 +20,19 @@
         gap: 8px;
 
         .btn-primary {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: #fff;
             border-radius: 25px;
         }
 
         .btn-danger {
             background-color: var(--danger-color);
+            color: #fff;
+            border-radius: 25px;
+        }
+
+        .btn-pay {
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 25px;
         }
